@@ -20,27 +20,33 @@ console.log(isPalindrome('hello'));
 
 
 //⁠Write JavaScript code to create a new HTML element, add it to the DOM, and attach an event listener to it.
-let newDiv = document.createElement('div');
-newDiv.textContent = 'Clickme.';
-document.body.appendChild(newDiv); 
-newDiv.addEventListener('click', function() {
+let nDiv = document.createElement('div');
+nDiv.textContent = 'Clickme.';
+document.body.appendChild(nDiv); 
+nDiv.addEventListener('click', function() {
   alert('Div is clicked!');
 });
 
 
 // Write a JavaScript function that removes duplicates from an array.
-let array = [1, 2, "hello", "world", 
-{ name: "Alice", age: 30 }, 
-{ name: "Alice", age: 30 }, 
-[1, 2, 3], [1, 2, 3], "hello", 3, [4, 5, 
-{ nested: "object" }], [4, 5, 
-{ nested: "object"}], { nested: [1, 2, 3] }, 
-{ nested: [1, 2, 3] }];
+let array = [1, 2, "hello", "world",
+ { name: "Alice", age: 30 },
+  { name: "Alice", age: 30 },
+   [1, 2, 3], [1, 2, 3], "hello", 3,
+    [4, 5, { nested: "object" }],
+     [4, 5, { nested: "object"}],
+      { nested: [1, 2, 3] },
+       { nested: [1, 2, 3] }];
 
-function removesDuplicate(array){
-    return new Set(array)
+function removeDuplicates(arr) {
+    return arr.filter((item, index) =>
+        arr.findIndex(other => JSON.stringify(other) === JSON.stringify(item)) === index
+    );
 }
-console.log(removesDuplicate(array));
+
+let uniqueArray = removeDuplicates(array);
+console.log(uniqueArray);
+
 
 
 
@@ -49,8 +55,23 @@ console.log(removesDuplicate(array));
 
 ////Write a JavaScript class Animal with a method speak(). Then, create a subclass Dog that overrides the speak() method.
 
+class Animal {
+  speak() {
+    console.log("The animal makes a sound.");
+  }
+}
 
+class Dog extends Animal {
+  speak() {
+    console.log("The dog barks.");
+  }
+}
 
+let genericAnimal = new Animal();
+genericAnimal.speak(); 
+
+let myDog = new Dog();
+myDog.speak();  
 
 
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="h1"></h1>
+    <script>
+      //Write a JavaScript function that checks if a string is a palindrome (reads the same backward as forward).
+      
+      function isPalindrome(str) {
+  const reversed = str.split('').reverse().join('');
+  return str === reversed;
+}
+console.log(isPalindrome('racecar')); 
+console.log(isPalindrome('hello'));   
+
+
+//⁠Write JavaScript code to create a new HTML element, add it to the DOM, and attach an event listener to it.
+let newDiv = document.createElement('div');
+newDiv.textContent = 'Clickme.';
+document.body.appendChild(newDiv); 
+newDiv.addEventListener('click', function() {
+  alert('Div is clicked!');
+});
+
+
+// Write a JavaScript function that removes duplicates from an array.
+let array = [1, 2, "hello", "world", 
+{ name: "Alice", age: 30 }, 
+{ name: "Alice", age: 30 }, 
+[1, 2, 3], [1, 2, 3], "hello", 3, [4, 5, 
+{ nested: "object" }], [4, 5, 
+{ nested: "object"}], { nested: [1, 2, 3] }, 
+{ nested: [1, 2, 3] }];
+
+function removesDuplicate(array){
+    return new Set(array)
+}
+console.log(removesDuplicate(array));
+
+
+
+  
+
+
+////Write a JavaScript class Animal with a method speak(). Then, create a subclass Dog that overrides the speak() method.
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>
